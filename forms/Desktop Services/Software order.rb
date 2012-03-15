@@ -27,8 +27,7 @@ def build_form(product)
     page "Initial Page",
       :contents,
       :horizontal_buttons,
-      :submit_button_value => "Submit",
-      :display_page => @@standard_display_page do
+      :submit_button_value => "Submit" do
       
       
       text "Service Item Description", "<p>#{build_description(@@name,@@description,@@image)}</p>"

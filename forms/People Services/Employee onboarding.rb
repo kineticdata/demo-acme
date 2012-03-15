@@ -385,8 +385,7 @@ ret_string
   page "Initial Page",
     :contents,
     :horizontal_buttons,
-    :submit_button_value => "Next->",
-    :display_page => @@standard_display_page do
+    :submit_button_value => "Next->" do
 
 
     text "Header", build_description(@@name,@@description,@@image)

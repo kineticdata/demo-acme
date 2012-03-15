@@ -12,5 +12,7 @@ def standard_initial_form
   management_group @@standard_management_group
   submission_group @@standard_submission_group
 
+  allow_anonymous false
+
   
 end

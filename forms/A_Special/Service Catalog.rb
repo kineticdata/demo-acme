@@ -32,7 +32,6 @@ service_item @@standard_catalog_service_catalog_name do
   page "Service Catalog Display",
     :confirmation,
     :vertical_buttons,
-    :display_page => @@standard_catalog_page,
     :style_class => " catalogTemplate" do
 #    style "", "OVERFLOW: hidden;", :html_id
     style "", "overflow:visible !important;", :html_id
@@ -132,26 +131,28 @@ service_item @@standard_catalog_service_catalog_name do
           :max_entries => "999",
           :sort_order => "Ascending",
           :qualification => %`('CustomerSurveyInstanceId'="<FLD>nothing;paramCustomerSurveyID;BASE</FLD>" OR  \
-          'OriginatingID' ="<FLD>nothing;paramCustomerSurveyID;BASE</FLD>") AND  'Visible' != $\\NULL$`
+          'OriginatingID' ="<FLD>nothing;paramCustomerSurveyID;BASE</FLD>")`
       end
     end
-    
-# TODO -- Get rid of this *****
-    text "Conversation Loader", "" do
-      event "Load Conversation",
-        :custom_action,
-        :custom_event do
-        custom_code ""
-        data_request "KS_RQT_Conversation",
-          :name => "Load Conversation",
-          :fields_available => "Create Date,Message",
-          :sort_fields => "",
-          :max_entries => "100",
-          :sort_order => "Ascending",
-          :qualification => %`'Source_InstanceID'= "<FLD>Approver ID;Approver ID;BASE</FLD>" ||  'Target_InstanceID' = "<FLD>Approver ID;Approver ID;BASE</FLD>" `
-      end
-    end
-    
+
+
+# Remove conversations - until this improves    
+    # 
+    # text "Conversation Loader", "" do
+    #   event "Load Conversation",
+    #     :custom_action,
+    #     :custom_event do
+    #     custom_code ""
+    #     data_request "KS_RQT_Conversation",
+    #       :name => "Load Conversation",
+    #       :fields_available => "Create Date,Message",
+    #       :sort_fields => "",
+    #       :max_entries => "100",
+    #       :sort_order => "Ascending",
+    #       :qualification => %`'Source_InstanceID'= "<FLD>Approver ID;Approver ID;BASE</FLD>" ||  'Target_InstanceID' = "<FLD>Approver ID;Approver ID;BASE</FLD>" `
+    #   end
+    # end
+    # 
 
 
     

@@ -1,4 +1,4 @@
-def standard_page_confirmation
+def standard_approval_page_confirmation
 
 
   page "Confirmation Page", 
@@ -13,8 +13,7 @@ def standard_page_confirmation
     text "Thanks", "Thank you", 
     :style_class => " primaryColorHeader"
 
-    text "Thanks/Submission ID", "<p>Thanks for your submission.</p>\
-    <p><b>Submission ID:  </b><FLD>Submission ID;536870913;BASE</FLD> </p>"
+    text "Thanks/Submission ID", "<p>Thanks for your answer.</p>"
     
     text "Request Info", ""
 

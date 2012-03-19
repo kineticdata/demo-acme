@@ -4,9 +4,9 @@ require File.join(File.dirname(__FILE__),"../../processes/software_process.rb")
 
 
   @@name = "ApprovalSkeleton"
-  @@categories = "Playground"
+  @@categories = ""
   @@type = "ApprovalTemplate"
-  @@image = "/kinetic/themes/acme/images/primo_icons/PNG/64x64/box.png"
+  @@image = "#{@@standard_image_base}/box.png"
   @@description = "Approval skeleton."
   @@task_description = "Approval skeleton"
 

@@ -69,7 +69,7 @@ def build_description(name,description,image)
     <div class="serviceItemDescriptionHeader rounded6" >#{name}</div>
     <div id="descriptionContent" class="descriptionContent">                     
       <div style="float:right;padding-left:5px;padding-bottom:5px;">
-        <img src="#{@@standard_image_base}/#{image}"/>
+        <img src="#{image}"/>
       </div>
       <br/>
       #{description}<br/>

@@ -22,7 +22,6 @@ service_item @@standard_catalog_service_catalog_name do
 
   header_content ""
 
-  web_server @@standard_web_server
   data_set @@standard_data_set
   
   visible_to_group @@standard_assignee

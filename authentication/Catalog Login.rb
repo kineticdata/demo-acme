@@ -30,7 +30,6 @@ service_item @@standard_authentication_form do
   </script>`
 
 
-  web_server @@standard_web_server
   data_set @@standard_data_set
   
   # This needs to be visible to everybody ???

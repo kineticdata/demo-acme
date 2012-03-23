@@ -4,7 +4,6 @@ def standard_initial_form
   display_name ""
   display_page @@standard_display_page
   header_content ""
-  web_server @@standard_web_server
   
   data_set @@standard_data_set
 

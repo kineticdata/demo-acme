@@ -1,0 +1,36 @@
+<%--
+    To leverage this file, include it in the same directory as the JSP used for
+    the rendering of Kinetic forms and include the following line somewhere
+    after the +customerSurvey+ bean has been declared:
+      <%@include file="logAccess.jspf"%>
+--%>
+<%
+    // If the logger has not been initialized yet
+    if (org.apache.log4j.LogManager.exists("com.kineticdata.loggers.access") == null) {
+        // Calculate the path to the %KINETIC_HOME%/logs/access.log file
+        String logFile = getServletContext().getRealPath("/logs/access.log");
+        // Initialize a Rolling file appender that will log up to 500MB of 
+        // access information over 50 10MB files.
+        org.apache.log4j.Layout layout = new org.apache.log4j.PatternLayout("%d{ISO8601} %m%n");
+        org.apache.log4j.RollingFileAppender appender = new org.apache.log4j.RollingFileAppender(layout, logFile);
+        appender.setMaxBackupIndex(50);
+        appender.setMaxFileSize("10MB");
+        // Set the access logger to use the rolling file appender previously configured
+        org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger("com.kineticdata.loggers.access");
+        logger.addAppender(appender);
+        // Log the initialization
+        logger.info("Initialized logger.");
+    }
+
+    // If the customer survey bean is not null
+    if (customerSurvey != null) {
+        // Retrieve the logger
+        org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger("com.kineticdata.loggers.access");
+        // Determine the catalog information
+        String catalogName = customerSurvey.getCategory();
+        String templateName = customerSurvey.getSurveyTemplateName();
+        String pageName = customerSurvey.getPageName();
+        // Log the access
+	logger.info("["+request.getHeader("x-forwarded-for")+"] ("+catalogName+") "+templateName+", "+pageName);
+    }
+%>

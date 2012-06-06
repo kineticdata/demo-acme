@@ -3,7 +3,7 @@ require File.join(File.dirname(__FILE__),"../../standards.rb")
 @@name = "Schedule Reboot Sample"
 @@categories = "Playground"
 @@type = "Playground"
-@@image = "#{@@standard_image_base}/user.png"
+@@image = "#{@@standard_image_base}calendar.png"
 @@description = "Sample form for scheduling."
 
 

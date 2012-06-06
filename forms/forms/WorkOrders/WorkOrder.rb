@@ -1,7 +1,7 @@
 require File.join(File.dirname(__FILE__),"../../standards.rb")
 
 @@name = "Work Order"
-@@categories = "Playground"
+@@categories = "Work Order"
 @@type = "Work Order"
 @@image = "#{@@standard_image_base}/user.png"
 @@description = "Basic Work Order."

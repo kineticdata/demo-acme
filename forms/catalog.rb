@@ -55,6 +55,10 @@ catalog @@standard_catalog_name,
   category "Playground",
     :active,
     :sort_order => "99"
+
+  category "Work Order",
+    :active,
+    :sort_order => "99"
     
   logout_action :go_to_template,
     :template_name => @@standard_catalog_service_catalog_name,

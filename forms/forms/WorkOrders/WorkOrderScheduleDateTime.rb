@@ -1,7 +1,7 @@
 require File.join(File.dirname(__FILE__),"../../standards.rb")
 
 @@name = "Work Order - Schedule Date and Time"
-@@categories = "Playground"
+@@categories = "Work Order"
 @@type = "Work Order"
 @@image = "#{@@standard_image_base}/calendar.png"
 @@description = "Work Order for scheduling a date/time."

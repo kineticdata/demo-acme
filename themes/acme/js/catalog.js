@@ -77,6 +77,7 @@ if (! KINETIC.catalog.Helper){
 
         this.setRequestsViewSize = function() {
             // This logic is only applicable for the catalog page.
+            // TODO - what is this??? -- JDS
             if (clientManager.templateId!='KR03b666d211df8e3b000423ba6808')
                 return;
 				

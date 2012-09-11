@@ -1,9 +1,9 @@
 require File.join(File.dirname(__FILE__),"../../standards.rb")
 
-@@name = "Schedule Reboot Sample"
+@@name = "Calendar Integration Sample"
 @@categories = "Playground"
 @@type = "Playground"
-@@image = "#{@@standard_image_base}calendar.png"
+@@image = "#{@@standard_image_base}/calendar.png"
 @@description = "Sample form for scheduling."
 
 
@@ -18,7 +18,43 @@ service_item @@name do
   standard_initial_form
 
   # override the header contest from standard_initial_form
-  header_content "<script>\nfunction refreshSchedule(ci) {\n    var iframe, iframeId, iframeDoc, base, title, params;\n\n    iframeId = 'iframeId';\n    iframe = YAHOO.util.Dom.get(iframeId);\n    if (iframe) {\n        // Set the base calendar URL\n        base = 'http://demo.kineticdata.com/KinCal/calendar?CalendarName=sithco_sample_scheduled_changes_param_ci';\n        \n        // Set the calendar title\n        title = ci + ' Scheduled Changes';\n        \n        // Set the calendar parameters - making sure to encode all the values\n        params = '&ci=' + encodeURIComponent(ci) + '&CalendarTitle=' + encodeURIComponent(title);\n        \n        // adjust the schedule height\n        iframe.style.height = '600px';\n        \n        // show the ajax loader\n        iframeDoc = iframe.contentDocument || window.frames[iframeId].document;\n        if (iframeDoc) {\n            var waitMsg = iframeDoc.getElementById('waitMsg');\n            if (waitMsg) {\n                waitMsg.style.display = 'none';\n            }\n            var loading = iframeDoc.getElementById('ajaxloading');\n            if (loading) {\n                loading.style.display = 'block';\n            }\n        }\n        \n        // Constructs the entire iFrame source\n        iframe.src = base + params;\n    }\n}\n</script>"
+  header_content "<script>
+function refreshSchedule(ci) {
+  var iframe, iframeId, iframeDoc, base, title, params;
+
+  iframeId = 'iframeId';
+  iframe = YAHOO.util.Dom.get(iframeId);
+  if (iframe) {
+    // Set the base calendar URL
+    base = 'http://demo.kineticdata.com/KinCal/calendar?CalendarName=sithco_sample_scheduled_changes_param_ci';
+
+    // Set the calendar title
+    title = ci + ' Scheduled Changes';
+
+    // Set the calendar parameters - making sure to encode all the values
+    params = '&ci=' + encodeURIComponent(ci) + '&CalendarTitle=' + encodeURIComponent(title);
+
+    // adjust the schedule height
+    iframe.style.height = '600px';
+
+    // show the ajax loader
+    iframeDoc = iframe.contentDocument || window.frames[iframeId].document;
+    if (iframeDoc) {
+      var waitMsg = iframeDoc.getElementById('waitMsg');
+      if (waitMsg) {
+        waitMsg.style.display = 'none';
+      }
+      var loading = iframeDoc.getElementById('ajaxloading');
+      if (loading) {
+        loading.style.display = 'block';
+      }
+    }
+
+  // Constructs the entire iFrame source
+  iframe.src = base + params;
+  }
+}
+</script>"
   
   style ".link span", "color: #0000ff;text-decoration: underline; cursor:pointer;", :css_class
   style ".floatLeft", "float:left; width:40%;", :css_class
@@ -64,7 +100,17 @@ service_item @@name do
       event "show contents",
         :custom_action,
         :click do
-        custom_code "var el = YAHOO.util.Dom.get('displayCal');\nvar schedule = KD.utils.Util.getElementObject('ScheduleWindow', 'DYNAMIC_TEXT_');\nif (el.innerHTML == 'Show Schedule') {\n  el.innerHTML = 'Hide Schedule';\n  schedule.style.display = 'block';\n} else {\n  el.innerHTML = 'Show Schedule';\n  schedule.style.display = 'none';\n}\n"
+        custom_code "
+        var el = YAHOO.util.Dom.get('displayCal');
+        var schedule = KD.utils.Util.getElementObject('ScheduleWindow', 'DYNAMIC_TEXT_');
+        if (el.innerHTML == 'Show Schedule') {
+          el.innerHTML = 'Hide Schedule';
+          schedule.style.display = 'block';
+          } else {
+            el.innerHTML = 'Show Schedule';
+            schedule.style.display = 'none';
+          }
+        "
       end
     end
     question "Summary", "Summary", :free_text,
@@ -74,7 +120,10 @@ service_item @@name do
     question "Notes", "Notes", :free_text,
       :size => "60",
       :rows => "3"
-    text "ScheduleWindow", "<iframe style='width: 99%; height: 100px; ' \nscrolling='yes' \nname='iframeId \nclass='advPlayer' \nid='iframeId' \nframeborder='0' \nsrc='http://demo.kineticdata.com/KinCal/custom/waitingForSelection.html'>\n</iframe>\n\n",
+    text "ScheduleWindow", "<iframe style='width: 99%; height: 100px; ' 
+    scrolling='yes' name='iframeId class='advPlayer' id='iframeId' frameborder='0'
+    src='http://demo.kineticdata.com/KinCal/custom/waitingForSelection.html'>
+    </iframe>",
       :removed
   end
 

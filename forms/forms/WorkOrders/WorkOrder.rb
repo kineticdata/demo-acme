@@ -3,7 +3,7 @@ require File.join(File.dirname(__FILE__),"../../standards.rb")
 @@name = "Work Order"
 @@categories = "Work Order"
 @@type = "Work Order"
-@@image = "#{@@standard_image_base}/user.png"
+@@image = "#{@@standard_image_base}/gear.png"
 @@description = "Basic Work Order."
 
 

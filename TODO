@@ -1,0 +1,16 @@
+Remove logout from display page - if we are not logged in.
+
+themes/acme/js/catalog.js has a hardcoded GUID in this.setRequestsViewSize
+
+
+Get rid of extra launcher pages
+- mobile service portal
+- related css
+- remove acme essense service item
+- remove acme Menu Service Portal
+
+Double check all Launcher pages
+
+
+
+

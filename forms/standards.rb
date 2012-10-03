@@ -7,24 +7,26 @@ require File.join(File.dirname(__FILE__),"/standard_approval_page_confirmation.r
 require File.join(File.dirname(__FILE__),"/standard_initial_form.rb")
 
 
-@@standard_company_name = "Acme"
 @@standard_catalog_name = "ACME"
-@@standard_catalog_name_url = "ACME_Catalog"
-@@standard_catalog_survey_name_url = "ACME_ImproveOurService"
-@@standard_authentication_form = "Catalog Login"
 
+
+@@standard_catalog_service_catalog_name = "#{@@standard_catalog_name} Service Portal"
+@@standard_catalog_name_url = "#{@@standard_catalog_name}_Catalog"
+@@standard_catalog_survey_name_url = "#{@@standard_catalog_name}_ImproveOurService"
+@@standard_authentication_form = "#{@@standard_catalog_name} Catalog Login"
+
+# Used to drive the standard look and feel
+@@standard_themes_base = "/themes/acme"
+@@standard_display_page = "#{@@standard_themes_base}/packages/base/display.jsp"
+@@standard_confirmation_page = "#{@@standard_themes_base}/packages/base/confirmationPage.jsp"
+@@standard_catalog_page = "#{@@standard_themes_base}/packages/catalog/catalog.jsp"
+@@standard_login_page = "#{@@standard_themes_base}/packages/base/login.jsp"
+
+# Used in Network Service Items - for domain name mgmt
 @@standard_company_base_domain_name = "acme.com"
 
-@@standard_catalog_service_catalog_name = "ACME Service Portal"
-
-
-@@standard_themes_base = "/themes/acme"
+#Used for Service items - to setup images
 @@standard_image_base = "/kinetic/themes/acme/images/primo_icons/PNG/64x64"
-
-
-@@standard_display_page = "#{@@standard_themes_base}/displayPage.jsp"
-@@standard_confirmation_page = "#{@@standard_themes_base}/confirmationPage.jsp"
-@@standard_catalog_page = "#{@@standard_themes_base}/serviceCatalog.jsp"
 
 
 

@@ -644,7 +644,7 @@ ret_string
      :style_class => " primaryColorHeader"    
     
     
-    section  "Resources"
+    section  "Resources Section"
     question "Resources", "Resources", :list,
       :check_box,
       :horizontal,
@@ -664,7 +664,7 @@ ret_string
     text "Systems Description", "Systems", 
      :style_class => " primaryColorHeader"    
     
-    section  "Systems"
+    section  "Systems Section"
     question "Systems", "Systems", :list,
       :check_box,
       :horizontal,

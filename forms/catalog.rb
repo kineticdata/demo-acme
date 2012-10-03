@@ -13,6 +13,20 @@ catalog @@standard_catalog_name,
   category "Access Services",
     :active,
     :sort_order => "10"
+
+
+  category "Access Services :: Mainframe",
+    :active,
+    :sort_order => "10"
+
+  category "Access Services :: Distributed",
+    :active,
+    :sort_order => "10"
+
+  category "Access Services :: Desktop",
+    :active,
+    :sort_order => "10"
+
   category "Advanced IT Services",
     :active,
     :sort_order => "20"

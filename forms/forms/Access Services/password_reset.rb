@@ -1,7 +1,7 @@
 require File.join(File.dirname(__FILE__),"../../standards.rb")
 
 @@name = "Password reset"
-@@categories = "Access Services"
+@@categories = "Access Services, Access Services :: Desktop"
 @@type = "Access"
 @@image = "#{@@standard_image_base}/user.png"
 @@description = "Reset password."
